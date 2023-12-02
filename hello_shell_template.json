@@ -1,0 +1,123 @@
+{
+    
+    "module_模板":{
+        "region":"地域",
+        "description":"描述",
+        "Price":"价格组成",
+        "params":"参数组成",
+        "params参数示例":{
+            "InstanceChargeType": "计价类型,一般使用 SPOTPAID 竞价实例,其他类型: PREPAID:预付费,即包年包月 POSTPAID_BY_HOUR:按小时后付费 CDHPAID:独享子机（基于专用宿主机创建,宿主机部分的资源不收费） SPOTPAID:竞价付费 CDCPAID:专用集群付费",
+            "InstanceChargePrepaid": {
+              "Period": null,
+              "RenewFlag": null
+            },
+            "Placement": {
+              "Zone": "实例所属的可用区ID。该参数可以通过调用  DescribeZones 的返回值中的Zone字段来获取。"
+            },
+            "InstanceType": null,
+            "ImageId": "镜像ID, Ubuntu Server 22.04 LTS 64位:img-487zeit5 | TencentOS Server 3.1 (TK4):img-eb30mz89 |Debian 12.0 64位:img-7ag0z2jt",
+            "SystemDisk": {
+              "DiskSize": "系统盘容量 | int64 单位GB | 计费准则 内地 ¥0.01/10GB/小时 "
+            },
+            "DataDisks": [
+              {
+                "DiskType": null,
+                "DiskId": null,
+                "DiskSize": null,
+                "DeleteWithInstance": null,
+                "SnapshotId": null,
+                "Encrypt": null,
+                "KmsKeyId": null,
+                "ThroughputPerformance": null,
+                "CdcId": null,
+                "BurstPerformance": null
+              }
+            ],
+            "VirtualPrivateCloud": {
+              "VpcId": null,
+              "SubnetId": null,
+              "AsVpcGateway": null,
+              "PrivateIpAddresses": [
+                null
+              ],
+              "Ipv6AddressCount": null
+            },
+            "InternetAccessible": {
+                  "PublicIpAssigned": true,
+                "InternetMaxBandwidthOut": "公网出带宽上限,单位: Mbps | init64",
+                  "InternetChargeType": "网络计费类型。取值范围: BANDWIDTH_PREPAID: 预付费按带宽结算 | TRAFFIC_POSTPAID_BY_HOUR: 流量按小时后付费 | BANDWIDTH_POSTPAID_BY_HOUR: 带宽按小时后付费 | BANDWIDTH_PACKAGE: 带宽包用户 | 默认取值: 非带宽包用户默认与子机付费类型保持一致,比如子机付费类型为预付费,网络计费类型默认为预付费；子机付费类型为后付费,网络计费类型默认为后付费。"
+                  
+              },
+            "InstanceCount": 1,
+            "InstanceName": "HelloShell",
+            "LoginSettings": {
+              "Password": "实例登录密码。不同操作系统类型密码复杂度限制不一样,具体如下： | Linux实例密码必须8到30位,至少包括两项[a-z],[A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。 | Windows实例密码必须12到30位,至少包括三项[a-z],[A-Z],[0-9] 和 [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。 | 若不指定该参数,则由系统随机生成密码,并通过站内信方式通知到用户。",
+              "KeyIds": [
+                "密钥ID列表。关联密钥后，就可以通过对应的私钥来访问实例；KeyId可通过接口DescribeKeyPairs获取，密钥与密码不能同时指定，"
+              ]
+            },
+            "SecurityGroupIds": [
+              "实例所属安全组。若不指定该参数，则绑定默认安全组。| 建议在所属地区创建一个全开放安全组用于反弹shell"
+            ],
+            "EnhancedService": {
+              "SecurityService": {
+                "Enabled": true
+              },
+              "MonitorService": {
+                "Enabled": true
+              }
+            },
+            "ClientToken": null,
+            "HostName": null,
+            "ActionTimer": {
+              "TimerAction": null,
+              "ActionTime": null,
+              "Externals": {
+                "ReleaseAddress": null,
+                "UnsupportNetworks": [
+                  null
+                ],
+                "StorageBlockAttr": {
+                  "Type": null,
+                  "MinSize": null,
+                  "MaxSize": null
+                }
+              }
+            },
+            "DisasterRecoverGroupIds": [
+              null
+            ],
+            "TagSpecification": [
+              {
+                "ResourceType": null,
+                "Tags": [
+                  {
+                    "Key": null,
+                    "Value": null
+                  }
+                ]
+              }
+            ],
+            "InstanceMarketOptions": {
+              "MarketType": null,
+              "SpotOptions": {
+                "MaxPrice": null,
+                "SpotInstanceType": null
+              }
+            },
+            "UserData": null,
+            "DryRun": null,
+            "CamRoleName": null,
+            "HpcClusterId": null,
+            "LaunchTemplate": {
+              "LaunchTemplateId": null,
+              "LaunchTemplateVersion": null
+            },
+            "DedicatedClusterId": null,
+            "ChcIds": [
+              null
+            ],
+            "DisableApiTermination": null
+          }
+    }
+}

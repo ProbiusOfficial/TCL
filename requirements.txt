@@ -1,0 +1,2 @@
+tencentcloud-sdk-python-cvm
+tencentcloud-sdk-python-vpc

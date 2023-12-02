@@ -1,0 +1,104 @@
+{   
+    "module_1":{
+        "region":"ap-nanjing",
+        "description":"南京模块,配置信息为2核心2G内存,20G系统盘,10M带宽,镜像为Ubuntu Server 22.04 LTS 64位(ID:img-487zeit5)",
+        "Price":"实例 ¥0.05 系统盘存储空间 ¥0.02 公网带宽按流量计费¥0.80/GB(内地) 每小时结算 平均资费-¥0.08/小时",
+        "params":{
+            "InstanceChargeType": "SPOTPAID",
+            "Placement": {
+                "Zone": "ap-nanjing-2"
+            },
+            "ImageId": "img-487zeit5",
+            "SystemDisk": {
+                "DiskSize": 20
+            },
+            "InternetAccessible": {
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "InternetMaxBandwidthOut": 10,
+                "PublicIpAssigned": true
+            },
+            "InstanceCount": 1,
+            "InstanceName": "HelloShell",
+            "LoginSettings": {
+                "Password": "r00t@HelloShell"
+            },
+            "SecurityGroupIds": [ "sg-94qbn8va" ],
+            "EnhancedService": {
+                "SecurityService": {
+                    "Enabled": true
+                },
+                "MonitorService": {
+                    "Enabled": true
+                }
+            }
+        }
+    },
+    "module_2":{
+        "region":"ap-hongkong",
+        "description":"香港模块,配置信息为2核心2G内存,20G系统盘,10M带宽,镜像为Ubuntu Server 22.04 LTS 64位(ID:img-487zeit5)",
+        "Price":"实例¥0.01 系统盘存储空间¥0.03 公网带宽按流量计费¥0.67/GB(香港) 每小时结算 平均资费-¥0.04/小时",
+        "params":{
+            "InstanceChargeType": "SPOTPAID",
+            "Placement": {
+                "Zone": "ap-hongkong-2"
+            },
+            "ImageId": "img-487zeit5",
+            "SystemDisk": {
+                "DiskSize": 20
+            },
+            "InternetAccessible": {
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "InternetMaxBandwidthOut": 10,
+                "PublicIpAssigned": true
+            },
+            "InstanceCount": 1,
+            "InstanceName": "HelloShell",
+            "LoginSettings": {
+                "Password": "r00t@HelloShell"
+            },
+            "SecurityGroupIds": [ "sg-8ctcv6d1" ],
+            "EnhancedService": {
+                "SecurityService": {
+                    "Enabled": true
+                },
+                "MonitorService": {
+                    "Enabled": true
+                }
+            }
+        }
+    },
+    "module_3":{
+        "region":"ap-hongkong",
+        "description":"香港模块(公钥登录模块),配置信息为2核心2G内存,20G系统盘,10M带宽,镜像为Ubuntu Server 22.04 LTS 64位(ID:img-487zeit5)",
+        "Price":"实例¥0.01 系统盘存储空间¥0.03 公网带宽按流量计费¥0.67/GB(香港) 每小时结算 平均资费-¥0.04/小时",
+        "params":{
+            "InstanceChargeType": "SPOTPAID",
+            "Placement": {
+                "Zone": "ap-hongkong-2"
+            },
+            "ImageId": "img-487zeit5",
+            "SystemDisk": {
+                "DiskSize": 20
+            },
+            "InternetAccessible": {
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "InternetMaxBandwidthOut": 10,
+                "PublicIpAssigned": true
+            },
+            "InstanceCount": 1,
+            "InstanceName": "HelloShell",
+            "LoginSettings": {
+                "KeyIds": [ "skey-i5d3b9vd" ]
+            },
+            "SecurityGroupIds": [ "sg-8ctcv6d1" ],
+            "EnhancedService": {
+                "SecurityService": {
+                    "Enabled": true
+                },
+                "MonitorService": {
+                    "Enabled": true
+                }
+            }
+        }
+    }
+}
