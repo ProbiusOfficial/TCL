@@ -3,7 +3,7 @@
 合法反弹shell一站式最廉价解决方案！！！！  
 欢迎关注关联主项目：[Hello_CTF](https://github.com/ProbiusOfficial/Hello-CTF)
 
-[![asciicast](https://asciinema.org/a/pXFf64INgIEeZHNPOrHDjLy6D.svg)](https://asciinema.org/a/pXFf64INgIEeZHNPOrHDjLy6D)
+[![asciicast](https://asciinema.org/a/627622.svg)](https://asciinema.org/a/627622)
 
 ## 引言
 
