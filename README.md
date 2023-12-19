@@ -3,6 +3,8 @@
 合法反弹shell一站式最廉价解决方案！！！！  
 欢迎关注关联主项目：[Hello_CTF](https://github.com/ProbiusOfficial/Hello-CTF)
 
+[![asciicast](https://asciinema.org/a/pXFf64INgIEeZHNPOrHDjLy6D.svg)](https://asciinema.org/a/pXFf64INgIEeZHNPOrHDjLy6D)
+
 ## 引言
 
 你是否面临下面这些问题？
@@ -16,8 +18,6 @@
 这些都不是问题，反弹shell的廉价解决方案，它来了！！！
 
 每个小时成本低至几分钱，随用随销毁，了事拂衣去,深藏功与名！！！
-
-![image-20231203042237605](./assets/image-20231203042237605.png)
 
 ## 前提
 - 拥有一个腾讯云账号，并且完成实名认证，没有？快用我的链接注册呜呜呜：[点我注册](https://curl.qcloud.com/wJfmoR2i)  
