@@ -1,6 +1,5 @@
-# Hello_CTF-Shell
+# 腾讯云抢占式实例监听器
 
-合法反弹shell一站式最廉价解决方案！！！！  
 欢迎关注关联主项目：[Hello_CTF](https://github.com/ProbiusOfficial/Hello-CTF)
 
 ![demo](https://github.com/ProbiusOfficial/Hello_CTF-Shell/assets/41804496/c5ce7ac6-289f-425c-9eb5-bb503249c0d3)
@@ -21,7 +20,8 @@
 每个小时成本低至几分钱，随用随销毁，了事拂衣去,深藏功与名！！！
 
 ## 前提
-- 拥有一个腾讯云账号，并且完成实名认证，没有？快用我的链接注册呜呜呜：[点我注册](https://curl.qcloud.com/wJfmoR2i)  
+
+- 拥有一个腾讯云账号，并且完成实名认证，没有？快用我的链接注册呜呜呜：[点我注册](https://curl.qcloud.com/7YFqnsuM)  
 
 - 在腾讯云上存留账户余额，建议5-10元，然后就能一直用下去！！(这也是使用腾讯云的原因，隔壁阿里的抢占实例虽然便宜几分但是需要预存120元以上余额，我的评价是**)
 
@@ -79,7 +79,7 @@ python main.py
 
 ![image-20231203034451967](./assets/image-20231203034451967.png)
 
-**这几天写轮子弹来弹去一种只花了0.15！**
+**这几天写轮子弹来弹去一共只花了0.15！**
 
 **什么叫物美价廉！！！**
 
