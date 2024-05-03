@@ -2,6 +2,8 @@
 
 欢迎关注关联主项目：[Hello_CTF](https://github.com/ProbiusOfficial/Hello-CTF)
 
+如果你在寻找一个纯免费的方案，推荐另一个项目[frp-R3shell](https://github.com/ProbiusOfficial/frp-R3shell)
+
 ![demo](https://github.com/ProbiusOfficial/Hello_CTF-Shell/assets/41804496/c5ce7ac6-289f-425c-9eb5-bb503249c0d3)
 
 
